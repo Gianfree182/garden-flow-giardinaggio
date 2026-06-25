@@ -7,7 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Sfumature personalizzate basate sulla palette del logo */
         :root {
             --color-brand-dark: #111111;
             --color-brand-green: #2d5a27;
@@ -25,7 +24,8 @@
     <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <span class="text-xl font-black tracking-wider uppercase">
+                <img src="resources/logo.jpg" alt="Garden Flow Logo" class="h-12 w-auto rounded-md object-contain">
+                <span class="text-xl font-black tracking-wider uppercase hidden sm:inline">
                     <span class="text-brand-green">Garden</span> <span class="text-brand-beige">Flow</span>
                 </span>
             </div>
@@ -53,17 +53,24 @@
         <section class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 aspect-video md:aspect-[21/9]">
             <div id="carousel" class="flex h-full transition-transform duration-700 ease-out">
                 <div class="min-w-full h-full relative">
-                    <img src="https://images.unsplash.com/photo-1558905617-15459db0ed88?auto=format&fit=crop&w=1600&q=80" alt="Lavori di Giardinaggio" class="w-full h-full object-cover brightness-50">
+                    <img src="resources/photos/at-work.jpg" alt="Garden Flow al lavoro" class="w-full h-full object-cover brightness-50">
                     <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
-                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Cura e Manutenzione del Verde</h2>
-                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-2">Interventi professionali con attrezzature dedicate per parchi e giardini impeccabili.</p>
+                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Interventi Professionali</h2>
+                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-2">Cura, precisione e pulizia per ogni tipologia di spazio verde.</p>
                     </div>
                 </div>
                 <div class="min-w-full h-full relative">
-                    <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=1600&q=80" alt="Potature ad alto fusto" class="w-full h-full object-cover brightness-50">
+                    <img src="resources/photos/giardino-prato-caso.heic" alt="Manutenzione Prato" class="w-full h-full object-cover brightness-50">
                     <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
-                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Potature ad Alto Fusto</h2>
-                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-2">Sicurezza e precisione per la gestione di alberi ad alto fusto e rami complessi.</p>
+                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Manutenzione Prati e Giardini</h2>
+                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-2">Parchi e aree verdi curate nel minimo dettaglio.</p>
+                    </div>
+                </div>
+                <div class="min-w-full h-full relative">
+                    <img src="resources/photos/flow.heic" alt="Architettura del verde" class="w-full h-full object-cover brightness-50">
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Architettura del Verde</h2>
+                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-2">Soluzioni personalizzate per valorizzare la tua proprietà.</p>
                     </div>
                 </div>
             </div>
@@ -83,21 +90,21 @@
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
-                    <div class="aspect-video overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=600&q=80" alt="Potature" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
+                        <img src="resources/photos/macchinario.jpeg" alt="Macchinari Potature" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h4 class="text-lg font-bold uppercase text-brand-beige">Potature Spezializzate</h4>
-                        <p class="text-sm text-gray-400 mt-2">Interventi mirati per la salute delle piante, sagomatura siepi e sfoltimento rami pericolosi.</p>
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Potature Specializzate</h4>
+                        <p class="text-sm text-gray-400 mt-2">Interventi ad alto fusto, sagomatura siepi e gestione rami complessi con piattaforme aeree dedicate.</p>
                     </div>
                 </div>
                 <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
-                    <div class="aspect-video overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1584467541268-b040f83be3fd?auto=format&fit=crop&w=600&q=80" alt="Pavimentazione" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
+                        <img src="resources/photos/giardino-sassolino.heic" alt="Pavimentazione e sassi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h4 class="text-lg font-bold uppercase text-brand-beige">Architettura & Pavimentazione</h4>
-                        <p class="text-sm text-gray-400 mt-2">Progettazione camminamenti esterni, terrazzamenti e aree living integrate nel verde.</p>
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Pavimentazione & Bordature</h4>
+                        <p class="text-sm text-gray-400 mt-2">Progettazione di camminamenti esterni, aree con sassolini ornamentali e contenimento aiuole.</p>
                     </div>
                 </div>
             </div>
@@ -106,29 +113,28 @@
         <section id="preventivo" class="bg-gray-900 border border-gray-800 rounded-2xl p-6 md:p-10 space-y-8">
             <div class="text-center max-w-xl mx-auto space-y-2">
                 <h3 class="text-2xl font-black uppercase tracking-tight text-brand-beige">Richiedi un Preventivo</h3>
-                <p class="text-sm text-gray-400">Compila i dettagli del lavoro per generare o inviare istantaneamente la tua richiesta di sopralluogo.</p>
+                <p class="text-sm text-gray-400">Inserisci i tuoi dati per inviare direttamente un messaggio preimpostato via WhatsApp o Email.</p>
             </div>
 
             <form id="form-preventivo" class="max-w-2xl mx-auto space-y-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Nome Completo</label>
-                        <input type="text" id="nome" required class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-green transition-colors" placeholder="Mario Rossi">
+                        <input type="text" id="nome" required class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-green transition-colors" placeholder="Il tuo nome">
                     </div>
                     <div>
                         <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Tipo di Intervento</label>
                         <select id="servizio" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-green transition-colors">
-                            <option value="Potatura Alberi / Siepi">Potatura Alberi / Siepi</option>
-                            <option value="Pavimentazione / Camminamenti">Pavimentazione Esterna</option>
-                            <option value="Manutenzione Giardino Completa">Manutenzione Periodica</option>
-                            <option value="Altro Intervento">Altro</option>
+                            <option value="Potature spezializzate">Potature</option>
+                            <option value="Pavimentazione e opere esterne">Pavimentazione</option>
+                            <option value="Manutenzione generale del verde">Manutenzione Giardino</option>
                         </select>
                     </div>
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Descrizione sintetica del lavoro</label>
-                    <textarea id="note" rows="3" required class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-green transition-colors" placeholder="Esempio: Potatura di 3 alberi ad alto fusto nel giardino privato..."></textarea>
+                    <textarea id="note" rows="3" required class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-green transition-colors" placeholder="Descrivi qui brevemente l'intervento richiesto..."></textarea>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -148,4 +154,66 @@
 
     <footer id="contatti" class="bg-gray-950 border-t border-gray-900 mt-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <div class="text-center
+            <div class="text-center sm:text-left space-y-1">
+                <p class="text-sm font-bold uppercase tracking-wider text-brand-beige">Garden Flow Giardinaggio</p>
+                <p class="text-xs text-gray-400">Via Sbago, 15, 40026 Imola (BO)</p>
+                <p class="text-xs text-gray-500">&copy; 2026 Tutti i diritti riservati.</p>
+            </div>
+            
+            <div class="flex items-center space-x-6 text-xl text-gray-400">
+                <a href="tel:+393297791202" class="hover:text-white transition-colors" title="Chiama ora"><i class="fa-solid fa-phone"></i></a>
+                <a href="mailto:gardenflowgiardinaggio@gmail.com" class="hover:text-white transition-colors" title="Invia Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.instagram.com/garden_flow_giardinaggio/" target="_blank" class="hover:text-brand-beige transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100088238495696" target="_blank" class="hover:text-brand-beige transition-colors" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Burger Menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        // Carousel Logic
+        const carousel = document.getElementById('carousel');
+        const slides = carousel.children;
+        const totalSlides = slides.length;
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        document.getElementById('next-slide').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        });
+        document.getElementById('prev-slide').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }, 5000);
+
+        // Messaging Logic
+        const phone = "393297791202";
+        const emailTarget = "gardenflowgiardinaggio@gmail.com";
+
+        function getFormValues() {
+            const nome = document.getElementById('nome').value.trim();
+            const servizio = document.getElementById('servizio').value;
+            const note = document.getElementById('note').value.trim();
+            if(!nome || !note) {
+                alert("Per favore, inserisci nome e descrizione.");
+                return null;
+            }
+            return { nome, servizio, note };
+        }
+
+        function sendWhatsApp() {
+            const data = getFormValues();
+            if(!data) return;
+            const text = `Richiesta Preventivo da Sito Web\nNome: ${data.nome}\nServizio richiest
