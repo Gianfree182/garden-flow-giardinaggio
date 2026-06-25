@@ -216,4 +216,17 @@
         function sendWhatsApp() {
             const data = getFormValues();
             if(!data) return;
-            const text = `Richiesta Preventivo da Sito Web\nNome: ${data.nome}\nServizio richiest
+            const text = `Richiesta Preventivo da Sito Web\nNome: ${data.nome}\nServizio richiesto: ${data.servizio}\nDescrizione: ${data.note}`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function sendEmail() {
+            const data = getFormValues();
+            if(!data) return;
+            const subject = `Richiesta Preventivo: ${data.servizio} - ${data.nome}`;
+            const body = `Nome: ${data.nome}\nServizio: ${data.servizio}\n\nDettagli:\n${data.note}`;
+            window.location.href = `mailto:${emailTarget}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+    </script>
+</body>
+</html>
