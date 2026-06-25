@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Flow Giardinaggio - Potature e Architettura del Verde</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Sfumature personalizzate basate sulla palette del logo */
+        :root {
+            --color-brand-dark: #111111;
+            --color-brand-green: #2d5a27;
+            --color-brand-beige: #d2b48c;
+        }
+        .bg-brand-dark { background-color: var(--color-brand-dark); }
+        .bg-brand-green { background-color: var(--color-brand-green); }
+        .text-brand-beige { color: var(--color-brand-beige); }
+        .border-brand-beige { border-color: var(--color-brand-beige); }
+        .bg-brand-beige { background-color: var(--color-brand-beige); }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-100 font-sans antialiased selection:bg-emerald-800 selection:text-white">
+
+    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-xl font-black tracking-wider uppercase">
+                    <span class="text-brand-green">Garden</span> <span class="text-brand-beige">Flow</span>
+                </span>
+            </div>
+
+            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide uppercase">
+                <a href="#servizi" class="hover:text-brand-beige transition-colors">Servizi</a>
+                <a href="#preventivo" class="hover:text-brand-beige transition-colors">Richiedi Preventivo</a>
+                <a href="#contatti" class="hover:text-brand-beige transition-colors">Contatti</a>
+            </nav>
+
+            <button id="menu-btn" class="md:hidden text-gray-400 hover:text-white focus:outline-none" aria-label="Apri Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-b border-gray-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#servizi" class="block text-base font-medium py-2 border-b border-gray-800 hover:text-brand-beige">Servizi</a>
+            <a href="#preventivo" class="block text-base font-medium py-2 border-b border-gray-800 hover:text-brand-beige">Richiedi Preventivo</a>
+            <a href="#contatti" class="block text-base font-medium py-2 hover:text-brand-beige">Contatti</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+
+        <section class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 aspect-video md:aspect-[21/9]">
+            <div id="carousel" class="flex h-full transition-transform duration-700 ease-out">
+                <div class="min-w-full h-full relative">
+                    <img src="https://images.unsplash.com/photo-1558905617-15459db0ed88?auto=format&fit=crop&w=1600&q=80" alt="Lavori di Giardinaggio" class="w-full h-full object-cover brightness-50">
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Cura e Manutenzione del Verde</h2>
+                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-2">Interventi professionali con attrezzature dedicate per parchi e giardini impeccabili.</p>
+                    </div>
+                </div>
+                <div class="min-w-full h-full relative">
+                    <img src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?auto=format&fit=crop&w=1600&q=80" alt="Potature ad alto fusto" class="w-full h-full object-cover brightness-50">
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Potature ad Alto Fusto</h2>
+                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-2">Sicurezza e precisione per la gestione di alberi ad alto fusto e rami complessi.</p>
+                    </div>
+                </div>
+            </div>
+
+            <button id="prev-slide" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-brand-green transition-colors cursor-pointer">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button id="next-slide" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-brand-green transition-colors cursor-pointer">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </section>
+
+        <section id="servizi" class="space-y-6">
+            <div class="border-l-4 border-brand-green pl-4">
+                <h3 class="text-xl font-bold uppercase tracking-wider text-brand-beige">I Nostri Interventi</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1598902108854-10e335adac99?auto=format&fit=crop&w=600&q=80" alt="Potature" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Potature Spezializzate</h4>
+                        <p class="text-sm text-gray-400 mt-2">Interventi mirati per la salute delle piante, sagomatura siepi e sfoltimento rami pericolosi.</p>
+                    </div>
+                </div>
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1584467541268-b040f83be3fd?auto=format&fit=crop&w=600&q=80" alt="Pavimentazione" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Architettura & Pavimentazione</h4>
+                        <p class="text-sm text-gray-400 mt-2">Progettazione camminamenti esterni, terrazzamenti e aree living integrate nel verde.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="preventivo" class="bg-gray-900 border border-gray-800 rounded-2xl p-6 md:p-10 space-y-8">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <h3 class="text-2xl font-black uppercase tracking-tight text-brand-beige">Richiedi un Preventivo</h3>
+                <p class="text-sm text-gray-400">Compila i dettagli del lavoro per generare o inviare istantaneamente la tua richiesta di sopralluogo.</p>
+            </div>
+
+            <form id="form-preventivo" class="max-w-2xl mx-auto space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Nome Completo</label>
+                        <input type="text" id="nome" required class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-green transition-colors" placeholder="Mario Rossi">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Tipo di Intervento</label>
+                        <select id="servizio" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-green transition-colors">
+                            <option value="Potatura Alberi / Siepi">Potatura Alberi / Siepi</option>
+                            <option value="Pavimentazione / Camminamenti">Pavimentazione Esterna</option>
+                            <option value="Manutenzione Giardino Completa">Manutenzione Periodica</option>
+                            <option value="Altro Intervento">Altro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Descrizione sintetica del lavoro</label>
+                    <textarea id="note" rows="3" required class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-green transition-colors" placeholder="Esempio: Potatura di 3 alberi ad alto fusto nel giardino privato..."></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <button type="button" onclick="sendWhatsApp()" class="flex items-center justify-center space-x-2 bg-emerald-700 hover:bg-emerald-600 text-white font-bold uppercase text-sm py-4 rounded-lg transition-colors cursor-pointer shadow-lg shadow-emerald-900/20">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Invia su WhatsApp</span>
+                    </button>
+                    <button type="button" onclick="sendEmail()" class="flex items-center justify-center space-x-2 bg-brand-green hover:bg-green-800 text-white font-bold uppercase text-sm py-4 rounded-lg transition-colors cursor-pointer shadow-lg shadow-green-900/20">
+                        <i class="fa-solid fa-envelope text-lg"></i>
+                        <span>Invia via Email</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+    </main>
+
+    <footer id="contatti" class="bg-gray-950 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="text-center
