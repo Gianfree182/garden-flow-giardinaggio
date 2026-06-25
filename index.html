@@ -21,30 +21,82 @@
 </head>
 <body class="bg-brand-dark text-gray-100 font-sans antialiased selection:bg-emerald-800 selection:text-white">
 
+    <!-- TOP BAR CONTATTI (Stile image_8f1681.png) + NAVIGATION BAR -->
     <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur border-b border-gray-800">
+        
+        <!-- TOP BAR VERDE -->
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 pt-2">
+            <div class="bg-[#2d5a27] rounded-full px-4 sm:px-6 py-2 flex items-center justify-between text-xs sm:text-sm font-medium text-white shadow-md">
+                <!-- Info Sinistra (Email, Tel, WhatsApp) -->
+                <div class="flex flex-wrap items-center gap-3 sm:gap-6">
+                    <!-- Email -->
+                    <a href="mailto:gardenflowgiardinaggio@gmail.com" class="flex items-center space-x-1.5 hover:text-gray-200 transition-colors">
+                        <i class="fa-solid fa-envelope text-[10px] sm:text-xs"></i>
+                        <span class="hidden xs:inline">Email:</span>
+                        <span class="font-normal">gardenflowgiardinaggio@gmail.com</span>
+                    </a>
+                    
+                    <!-- Separatore visibile solo su desktop -->
+                    <span class="hidden md:inline text-emerald-300/60">•</span>
+                    
+                    <!-- Telefono -->
+                    <a href="tel:+393297791202" class="flex items-center space-x-1.5 hover:text-gray-200 transition-colors">
+                        <i class="fa-solid fa-mobile-screen-button text-[10px] sm:text-xs"></i>
+                        <span class="hidden xs:inline">Tel.:</span>
+                        <span class="font-normal">+39 329 779 1202</span>
+                    </a>
+                    
+                    <!-- Separatore visibile solo su desktop -->
+                    <span class="hidden lg:inline text-emerald-300/60">•</span>
+                    
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/393297791202" target="_blank" class="hidden sm:flex items-center space-x-1.5 hover:text-gray-200 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-sm text-emerald-300"></i>
+                        <span>Whatsapp:</span>
+                        <span class="font-normal">+39 329 779 1202</span>
+                    </a>
+                </div>
+
+                <!-- Social Destra (Facebook, Instagram) -->
+                <div class="flex items-center space-x-4 pl-2 shrink-0">
+                    <a href="https://www.facebook.com/profile.php?id=100088238495696" target="_blank" class="hover:text-gray-200 transition-colors text-sm sm:text-base" title="Facebook">
+                        <i class="fa-brands fa-square-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/garden_flow_giardinaggio/" target="_blank" class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[#d2b48c] text-[#111111] flex items-center justify-center hover:bg-white transition-colors text-xs sm:text-sm shadow" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVBAR PRINCIPALE -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
             <div class="flex items-center space-x-3">
                 <img src="resources/logo.jpg" alt="Garden Flow Logo" class="h-12 w-auto rounded-md object-contain">
                 <span class="text-xl font-black tracking-wider uppercase hidden sm:inline">
-                    <span class="text-brand-green">Garden</span> <span class="text-brand-beige">Flow</span> <span class="text-brand-green">Giardinaggio</span>
+                    <span class="text-[#2d5a27]">Garden</span> <span class="text-[#d2b48c]">Flow</span>
                 </span>
             </div>
 
+            <!-- Desktop Nav -->
             <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide uppercase">
-                <a href="#servizi" class="hover:text-brand-beige transition-colors">Servizi</a>
-                <a href="#preventivo" class="hover:text-brand-beige transition-colors">Richiedi Preventivo</a>
-                <a href="#contatti" class="hover:text-brand-beige transition-colors">Contatti</a>
+                <a href="#servizi" class="hover:text-[#d2b48c] transition-colors">Servizi</a>
+                <a href="#preventivo" class="hover:text-[#d2b48c] transition-colors">Richiedi Preventivo</a>
+                <a href="#contatti" class="hover:text-[#d2b48c] transition-colors">Contatti</a>
             </nav>
 
+            <!-- Mobile Burger Button -->
             <button id="menu-btn" class="md:hidden text-gray-400 hover:text-white focus:outline-none" aria-label="Apri Menu">
                 <i class="fa-solid fa-bars text-2xl"></i>
             </button>
         </div>
 
+        <!-- Mobile Dropdown Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-b border-gray-800 px-4 pt-2 pb-6 space-y-3">
-            <a href="#servizi" class="block text-base font-medium py-2 border-b border-gray-800 hover:text-brand-beige">Servizi</a>
-            <a href="#preventivo" class="block text-base font-medium py-2 border-b border-gray-800 hover:text-brand-beige">Richiedi Preventivo</a>
-            <a href="#contatti" class="block text-base font-medium py-2 hover:text-brand-beige">Contatti</a>
+            <a href="#servizi" class="block text-base font-medium py-2 border-b border-gray-800 hover:text-[#d2b48c]">Servizi</a>
+            <a href="#preventivo" class="block text-base font-medium py-2 border-b border-gray-800 hover:text-[#d2b48c]">Richiedi Preventivo</a>
+            <a href="#contatti" class="block text-base font-medium py-2 hover:text-[#d2b48c]">Contatti</a>
         </div>
     </header>
 
