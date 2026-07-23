@@ -103,29 +103,43 @@
 
         <section class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 aspect-video md:aspect-[21/9]">
             <div id="carousel" class="flex h-full transition-transform duration-700 ease-out">
+                
+                <!-- Slide 1: VIDEO (es. Potatura / Lavoro in corso) -->
                 <div class="min-w-full h-full relative">
-                    <img src="../resources/photos/at-work.jpg" alt="Garden Flow al lavoro" class="w-full h-full object-cover brightness-50">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover brightness-50">
+                        <source src="../resources/videos/potatura-alto.mp4" type="video/mp4">
+                    </video>
                     <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
-                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Interventi Professionali</h2>
-                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-2">Cura, precisione e pulizia per ogni tipologia di spazio verde.</p>
+                        <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-emerald-400 mb-1"><i class="fa-solid fa-play text-[10px] mr-1"></i> In Azione</span>
+                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Potature ad Alto Fusto</h2>
+                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-1">Interventi complessi in totale sicurezza con piattaforme dedicate.</p>
                     </div>
                 </div>
+
+                <!-- Slide 2: FOTO (Realizzazione Giardini) -->
                 <div class="min-w-full h-full relative">
-                    <img src="../resources/photos/giardino-prato-caso.jpg" alt="Manutenzione Prato" class="w-full h-full object-cover brightness-50">
+                    <img src="../resources/photos/giardino-prato-caso.jpg" alt="Realizzazione Giardini" class="w-full h-full object-cover brightness-50">
                     <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
-                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Manutenzione Prati e Giardini</h2>
-                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-2">Parchi e aree verdi curate nel minimo dettaglio.</p>
+                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Realizzazione Giardini</h2>
+                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-1">Dalla progettazione alla messa in dimora del tuo spazio verde ideale.</p>
                     </div>
                 </div>
+
+                <!-- Slide 3: VIDEO (es. Macchinari / Verde Pubblico) -->
                 <div class="min-w-full h-full relative">
-                    <img src="../resources/photos/flow.jpg" alt="Architettura del verde" class="w-full h-full object-cover brightness-50">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover brightness-50">
+                        <source src="../resources/videos/giardino-piscina.mp4" type="video/mp4">
+                    </video>
                     <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
-                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Architettura del Verde</h2>
-                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-2">Soluzioni personalizzate per valorizzare la tua proprietà.</p>
+                        <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-emerald-400 mb-1"><i class="fa-solid fa-play text-[10px] mr-1"></i> Professionalità</span>
+                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Verde Pubblico & Arredo Urbano</h2>
+                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-1">Manutenzione specializzata per comuni, aziende e grandi complessi.</p>
                     </div>
                 </div>
+
             </div>
 
+            <!-- Frecce di Navigazione -->
             <button id="prev-slide" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-brand-green transition-colors cursor-pointer">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
@@ -136,28 +150,114 @@
 
         <section id="servizi" class="space-y-6">
             <div class="border-l-4 border-brand-green pl-4">
-                <h3 class="text-xl font-bold uppercase tracking-wider text-brand-beige">I Nostri Interventi</h3>
+                <h3 class="text-xl font-bold uppercase tracking-wider text-brand-beige">I Nostri Servizi Specializzati</h3>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- 1. Potature -->
                 <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
                     <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
-                        <img src="../resources/photos/macchinario.jpeg" alt="Macchinari Potature" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="resources/photos/macchinario.jpeg" alt="Potature" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h4 class="text-lg font-bold uppercase text-brand-beige">Potature Specializzate</h4>
-                        <p class="text-sm text-gray-400 mt-2">Interventi ad alto fusto, sagomatura siepi e gestione rami complessi con piattaforme aeree dedicate.</p>
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Potature ad Alto Fusto</h4>
+                        <p class="text-sm text-gray-400 mt-2">Gestione di alberi ad alto fusto, abbattimenti controllati e sagomatura siepi con piattaforme aeree.</p>
                     </div>
                 </div>
+
+                <!-- 2. Realizzazione Giardini -->
                 <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
                     <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
-                        <img src="../resources/photos/giardino-sassolino.jpg" alt="Pavimentazione e sassi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="resources/photos/flow.jpg" alt="Realizzazione Giardini" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
                     <div class="p-5">
-                        <h4 class="text-lg font-bold uppercase text-brand-beige">Pavimentazione & Bordature</h4>
-                        <p class="text-sm text-gray-400 mt-2">Progettazione di camminamenti esterni, aree con sassolini ornamentali e contenimento aiuole.</p>
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Realizzazione Giardini</h4>
+                        <p class="text-sm text-gray-400 mt-2">Progettazione da zero, posa prato a rotoli o semina, piantumazione e impianto di irrigazione.</p>
                     </div>
                 </div>
+
+                <!-- 3. Arredo Urbano & Bordature -->
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
+                    <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
+                        <img src="resources/photos/giardino-sassolino.jpg" alt="Arredo Urbano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Arredo Urbano & Pavimentazione</h4>
+                        <p class="text-sm text-gray-400 mt-2">Creazione di camminamenti esterni, aiuole con ciottoli decorativi, bordature e elementi d'arredo per esterni.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Manutenzione Verde Privato -->
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
+                    <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
+                        <img src="resources/photos/giardino-prato-caso.jpg" alt="Verde Privato" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Manutenzione Verde Privato</h4>
+                        <p class="text-sm text-gray-400 mt-2">Cura periodica per giardini residenziali e ville: taglio erba, concimazione, trattamenti fitosanitari e pulizia stagionale.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Verde Pubblico -->
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300 sm:col-span-2 lg:col-span-1">
+                    <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
+                        <img src="resources/photos/at-work.jpg" alt="Verde Pubblico" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Manutenzione Verde Pubblico</h4>
+                        <p class="text-sm text-gray-400 mt-2">Interventi su parchi, aree condominiali, complessi commerciali e spazi comunali con macchinari professionali.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PERCHÉ SCEGLIERE NOI -->
+        <section class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-6 md:p-10 space-y-8">
+            <div class="text-center max-w-xl mx-auto">
+                <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-400">Standard Elevati</h3>
+                <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-brand-beige mt-1">Perché scegliere Garden Flow</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="bg-gray-950/60 p-6 rounded-xl border border-gray-800/80 text-center space-y-3 hover:border-brand-green transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-[#2d5a27]/20 text-[#2d5a27] flex items-center justify-center text-xl mx-auto">
+                        <i class="fa-solid fa-broom text-brand-beige"></i>
+                    </div>
+                    <h4 class="font-bold uppercase text-white text-sm">Cantiere Sempre Pulito</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">A fine giornata non lasciamo un solo ramo a terra. Raccogliamo e smaltiamo tutto il materiale di scarto.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-gray-950/60 p-6 rounded-xl border border-gray-800/80 text-center space-y-3 hover:border-brand-green transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-[#2d5a27]/20 text-[#2d5a27] flex items-center justify-center text-xl mx-auto">
+                        <i class="fa-solid fa-truck-monster text-brand-beige"></i>
+                    </div>
+                    <h4 class="font-bold uppercase text-white text-sm">Macchinari Propri</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">Piattaforme aeree e trincia di nostra proprietà: nessun ritardo per noleggi di terzi e massima efficienza.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-gray-950/60 p-6 rounded-xl border border-gray-800/80 text-center space-y-3 hover:border-brand-green transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-[#2d5a27]/20 text-[#2d5a27] flex items-center justify-center text-xl mx-auto">
+                        <i class="fa-solid fa-clock text-brand-beige"></i>
+                    </div>
+                    <h4 class="font-bold uppercase text-white text-sm">Sopralluogo in 24h</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">Valutiamo l'intervento sul posto in tempi rapidi e forniamo un preventivo chiaro senza sorprese.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-gray-950/60 p-6 rounded-xl border border-gray-800/80 text-center space-y-3 hover:border-brand-green transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-[#2d5a27]/20 text-[#2d5a27] flex items-center justify-center text-xl mx-auto">
+                        <i class="fa-solid fa-shield-halved text-brand-beige"></i>
+                    </div>
+                    <h4 class="font-bold uppercase text-white text-sm">Sicurezza Certificata</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">Operatori qualificati per interventi in quota e copertura assicurativa completa per la tua proprietà.</p>
+                </div>
+
             </div>
         </section>
 
