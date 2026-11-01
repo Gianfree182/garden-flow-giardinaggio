@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Flow Giardinaggio - Presto Online</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --color-brand-dark: #111111;
+            --color-brand-green: #2d5a27;
+            --color-brand-beige: #d2b48c;
+        }
+        .bg-brand-dark { background-color: var(--color-brand-dark); }
+        .text-brand-beige { color: var(--color-brand-beige); }
+        .bg-brand-green { background-color: var(--color-brand-green); }
+
+        /* Animazione fluida dello sfondo sfumato */
+        .animated-bg {
+            background: linear-gradient(-45deg, #111111, #162a14, #1a2419, #111111);
+            background-size: 400% 400%;
+            animation: gradientAnimation 12s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+    </style>
+</head>
+<body class="animated-bg text-gray-100 font-sans antialiased h-screen flex flex-col justify-between selection:bg-emerald-800 selection:text-white">
+
+    <header class="w-full max-w-7xl mx-auto px-6 py-4 flex items-center justify-between opacity-90">
+        <div class="flex items-center space-x-4">
+            <img src="resources/logo.jpg" alt="Garden Flow Logo" class="h-16 md:h-20 w-auto rounded-lg object-contain border border-gray-800/60 shadow-md">
+            <span class="text-base font-black tracking-wider uppercase hidden sm:inline">
+                <span class="text-[#2d5a27]">Garden</span> <span class="text-[#d2b48c]">Flow</span>
+            </span>
+        </div>
+        <div class="flex items-center space-x-4 text-sm sm:text-base">
+            <a href="tel:+393297791202" class="hover:text-[#d2b48c] transition-colors" title="Telefono"><i class="fa-solid fa-phone"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=393297791202" target="_blank" class="hover:text-emerald-400 transition-colors" title="WhatsApp"><i class="fa-brands fa-whatsapp text-lg"></i></a>        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 text-center space-y-8 my-auto flex flex-col items-center">
+        
+        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#2d5a27] to-[#162a14] text-brand-beige text-3xl shadow-xl animate-bounce duration-1000">
+            <i class="fa-solid fa-leaf"></i>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-none">
+            Il tuo spazio verde <br>
+            <span class="text-brand-beige">sta per sbocciare</span>
+        </h1>
+
+        <p class="text-gray-400 text-base sm:text-lg max-w-xl mx-auto font-light leading-relaxed">
+            Stiamo coltivando la nostra nuova piattaforma web. <br>
+            Il servizio professionale di potature, cura e architettura del verde a Imola e dintorni sarà presto online.
+        </p>
+
+        <div class="pt-4">
+                <a href="https://api.whatsapp.com/send?phone=393297791202" target="_blank" class="inline-flex items-center space-x-3 bg-[#2d5a27] hover:bg-green-800 text-white font-bold uppercase text-xs tracking-wider px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:scale-105">                <i class="fa-brands fa-whatsapp text-base"></i>
+                <span>Richiedi info su WhatsApp</span>
+            </a>
+        </div>
+    </main>
+
+    <footer class="w-full max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-gray-900/50 text-xs text-gray-500">
+        <div class="text-center sm:text-left space-y-0.5">
+            <p class="font-bold uppercase tracking-wider text-brand-beige text-[10px]">Garden Flow Giardinaggio</p>
+            <p class="text-[11px]">di Florin Herghelegiu</p>
+            <p>Via Montanara Sud 4262 - 40022 Imola (BO)</p>
+            <p>P.IVA / C.F. 02686740396</p>
+        </div>
+        
+        <div class="flex items-center space-x-4 text-base text-gray-400">
+            <a href="https://www.facebook.com/profile.php?id=100088238495696" target="_blank" class="hover:text-brand-beige transition-colors" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.instagram.com/garden_flow_giardinaggio/" target="_blank" class="hover:text-brand-beige transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+
+        <div class="text-center sm:text-right space-y-1">
+            <p>&copy; 2026 Tutti i diritti riservati.</p>
+            <p><a href="/privacy-policy.html" class="underline hover:text-brand-beige transition-colors">Privacy & Cookie Policy</a></p>
+        </div>
+        <!-- Credits Freeherds con Logo -->
+        <div class="pt-3 text-xs text-gray-500 flex items-center justify-center sm:justify-start gap-2">
+            <span>Crafted with passion &amp; digital cappelletti by</span>
+            <a href="https://freeherds.github.io/products-freeherds/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-medium text-gray-400 hover:text-brand-beige transition-colors group">
+                <img src="../resources/photos/logo-freeherds.png" alt="Freeherds Logo" class="h-4 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity">
+                <span class="underline">Freeherds</span>
+            </a>
+        </div>
+    </footer>
+
+</body>
+</html>
