@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garden Flow Giardinaggio - Presto Online</title>
+    <title>Garden Flow Giardinaggio - Potature e Architettura del Verde</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
         :root {
             --color-brand-dark: #111111;
@@ -14,85 +13,629 @@
             --color-brand-beige: #d2b48c;
         }
         .bg-brand-dark { background-color: var(--color-brand-dark); }
-        .text-brand-beige { color: var(--color-brand-beige); }
         .bg-brand-green { background-color: var(--color-brand-green); }
+        .text-brand-beige { color: var(--color-brand-beige); }
+        .border-brand-beige { border-color: var(--color-brand-beige); }
+        .bg-brand-beige { background-color: var(--color-brand-beige); }
 
-        /* Animazione fluida dello sfondo sfumato */
-        .animated-bg {
-            background: linear-gradient(-45deg, #111111, #162a14, #1a2419, #111111);
-            background-size: 400% 400%;
-            animation: gradientAnimation 12s ease infinite;
+        .before-after-section {
+            padding: 90px 20px;
+            background-color: #111111; /* Stesso sfondo scuro del sito */
+            color: #e0e0e0;
         }
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+
+        .before-after-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
         }
+
+        .before-after-section .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .before-after-section .section-title .subtitle {
+            color: #d2b48c; /* Tonalità beige/sabbia di Garden Flow */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .before-after-section .section-title h2 {
+            font-size: 2.4rem;
+            color: #ffffff;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+        }
+
+        .before-after-section .section-title p {
+            color: #a0a0a0;
+            max-width: 620px;
+            margin: 0 auto;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .before-after-section .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .before-after-section .comparison-card {
+            background: #181818;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .before-after-section .comparison-card:hover {
+            transform: translateY(-6px);
+            border-color: #2d5a27; /* Verde caratteristico */
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .before-after-section .badge {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            z-index: 2;
+            padding: 6px 16px;
+            font-weight: 700;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffffff;
+        }
+
+        .before-after-section .before .badge {
+            background-color: #c0392b;
+        }
+
+        .before-after-section .after .badge {
+            background-color: #2d5a27; /* Verde Garden Flow */
+        }
+
+        .before-after-section .image-wrapper {
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .before-after-section .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .before-after-section .comparison-card:hover .image-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .before-after-section .card-content {
+            padding: 25px;
+        }
+
+        .before-after-section .card-content h3 {
+            margin-top: 0;
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .before-after-section .card-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .before-after-section .card-content ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            color: #b0b0b0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .before-after-section .before .card-content ul li::before {
+            content: "✕";
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .before-after-section .after .card-content ul li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2d5a27;
+            font-weight: bold;
+        }
+
     </style>
 </head>
-<body class="animated-bg text-gray-100 font-sans antialiased h-screen flex flex-col justify-between selection:bg-emerald-800 selection:text-white">
 
-    <header class="w-full max-w-7xl mx-auto px-6 py-4 flex items-center justify-between opacity-90">
-        <div class="flex items-center space-x-4">
-            <img src="resources/logo.jpg" alt="Garden Flow Logo" class="h-16 md:h-20 w-auto rounded-lg object-contain border border-gray-800/60 shadow-md">
-            <span class="text-base font-black tracking-wider uppercase hidden sm:inline">
-                <span class="text-[#2d5a27]">Garden</span> <span class="text-[#d2b48c]">Flow</span>
-            </span>
+<body class="bg-brand-dark text-gray-100 font-sans antialiased selection:bg-emerald-800 selection:text-white">
+
+    <!-- TOP BAR CONTATTI (Stile image_8f1681.png) + NAVIGATION BAR -->
+    <header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur border-b border-gray-800">
+        
+        <!-- TOP BAR VERDE (Mobile Friendly: 1 sola riga) -->
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 pt-2">
+            <div class="bg-[#2d5a27] rounded-full px-3 sm:px-6 py-1.5 flex items-center justify-between text-xs font-medium text-white shadow-md">
+                
+                <!-- Info Sinistra (Chiamata e WhatsApp immediati su Mobile) -->
+                <div class="flex items-center space-x-3 sm:space-x-6">
+                    
+                    <!-- Email: visibile SOLO da schermo medio (md) in poi -->
+                    <a href="mailto:gardenflowgiardinaggio@gmail.com" class="hidden md:flex items-center space-x-1.5 hover:text-gray-200 transition-colors">
+                        <i class="fa-solid fa-envelope text-xs"></i>
+                        <span class="font-normal">gardenflowgiardinaggio@gmail.com</span>
+                    </a>
+                    
+                    <span class="hidden md:inline text-emerald-300/60">•</span>
+                    
+                    <!-- Telefono -->
+                    <a href="tel:+393297791202" class="flex items-center space-x-1.5 hover:text-gray-200 transition-colors">
+                        <i class="fa-solid fa-mobile-screen-button text-xs text-emerald-300 sm:text-white"></i>
+                        <span class="font-semibold sm:font-normal">+39 329 779 1202</span>
+                    </a>
+                    
+                    <!-- Icona Email veloce SOLO su mobile -->
+                    <a href="mailto:gardenflowgiardinaggio@gmail.com" class="md:hidden flex items-center hover:text-gray-200 transition-colors pl-1" title="Invia Email">
+                        <i class="fa-solid fa-envelope text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Social e WhatsApp a Destra -->
+                <div class="flex items-center space-x-3 shrink-0">
+                    <a href="https://wa.me/393297791202" target="_blank" class="flex items-center space-x-1 hover:text-gray-200 transition-colors" title="WhatsApp">
+                        <i class="fa-brands fa-whatsapp text-sm text-emerald-300"></i>
+                        <span class="hidden sm:inline font-normal">WhatsApp</span>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100088238495696" target="_blank" class="hover:text-gray-200 transition-colors text-sm" title="Facebook">
+                        <i class="fa-brands fa-square-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/garden_flow_giardinaggio/" target="_blank" class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#d2b48c] text-[#111111] flex items-center justify-center hover:bg-white transition-colors text-[10px] sm:text-xs shadow" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
+            </div>
         </div>
-        <div class="flex items-center space-x-4 text-sm sm:text-base">
-            <a href="tel:+393297791202" class="hover:text-[#d2b48c] transition-colors" title="Telefono"><i class="fa-solid fa-phone"></i></a>
-            <a href="https://api.whatsapp.com/send?phone=393297791202" target="_blank" class="hover:text-emerald-400 transition-colors" title="WhatsApp"><i class="fa-brands fa-whatsapp text-lg"></i></a>        </div>
+
+        <!-- NAVBAR PRINCIPALE -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3">
+                <img src="../resources/logo.jpg" alt="Garden Flow Logo" class="h-12 w-auto rounded-md object-contain">
+                <span class="text-xl font-black tracking-wider uppercase hidden sm:inline">
+                    <span class="text-[#2d5a27]">Garden</span> <span class="text-[#d2b48c]">Flow</span> <span class="text-[#2d5a27]">Giardinaggio</span>
+                </span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 text-sm font-medium tracking-wide uppercase">
+                <a href="#servizi" class="hover:text-[#d2b48c] transition-colors">Servizi</a>
+                <a href="#preventivo" class="hover:text-[#d2b48c] transition-colors">Richiedi Preventivo</a>
+                <a href="#contatti" class="hover:text-[#d2b48c] transition-colors">Contatti</a>
+            </nav>
+
+            <!-- Mobile Burger Button -->
+            <button id="menu-btn" class="md:hidden text-gray-400 hover:text-white focus:outline-none" aria-label="Apri Menu">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-dark border-b border-gray-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#servizi" class="block text-base font-medium py-2 border-b border-gray-800 hover:text-[#d2b48c]">Servizi</a>
+            <a href="#preventivo" class="block text-base font-medium py-2 border-b border-gray-800 hover:text-[#d2b48c]">Richiedi Preventivo</a>
+            <a href="#contatti" class="block text-base font-medium py-2 hover:text-[#d2b48c]">Contatti</a>
+        </div>
     </header>
 
-    <main class="max-w-3xl mx-auto px-6 text-center space-y-8 my-auto flex flex-col items-center">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
+
+        <section class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-900 aspect-video md:aspect-[21/9]">
+            <div id="carousel" class="flex h-full transition-transform duration-700 ease-out">
+                
+                <!-- Slide 1: VIDEO (es. Potatura / Lavoro in corso) -->
+                <div class="min-w-full h-full relative">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover brightness-50">
+                        <source src="../resources/videos/potatura-alto.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                        <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-emerald-400 mb-1"><i class="fa-solid fa-play text-[10px] mr-1"></i> In Azione</span>
+                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Potature ad Alto Fusto</h2>
+                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-1">Interventi complessi in totale sicurezza con piattaforme dedicate.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2: FOTO (Realizzazione Giardini) -->
+                <div class="min-w-full h-full relative">
+                    <img src="../resources/photos/giardino-prato-caso.jpg" alt="Realizzazione Giardini" class="w-full h-full object-cover brightness-50">
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Realizzazione Giardini</h2>
+                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-1">Dalla progettazione alla messa in dimora del tuo spazio verde ideale.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 3: VIDEO (es. Macchinari / Verde Pubblico) -->
+                <div class="min-w-full h-full relative">
+                    <video autoplay loop muted playsinline class="w-full h-full object-cover brightness-50">
+                        <source src="../resources/videos/giardino-piscina.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 flex flex-col justify-end p-6 md:p-12 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                        <span class="text-xs md:text-sm font-bold uppercase tracking-widest text-emerald-400 mb-1"><i class="fa-solid fa-play text-[10px] mr-1"></i> Professionalità</span>
+                        <h2 class="text-2xl md:text-4xl font-extrabold uppercase tracking-tight text-brand-beige">Verde Pubblico & Arredo Urbano</h2>
+                        <p class="text-sm md:text-base text-gray-300 max-w-xl mt-1">Manutenzione specializzata per comuni, aziende e grandi complessi.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Frecce di Navigazione -->
+            <button id="prev-slide" class="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-brand-green transition-colors cursor-pointer">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button id="next-slide" class="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-brand-green transition-colors cursor-pointer">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </section>
+
+        <!-- SEZIONE SERVIZI -->
+        <!-- SEZIONE SERVIZI -->
+        <section id="servizi" class="space-y-6">
+            <div class="border-l-4 border-brand-green pl-4">
+                <h3 class="text-xl font-bold uppercase tracking-wider text-brand-beige">I Nostri Servizi Specializzati</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- 1. Abbattimento Alberi & Potature -->
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
+                    <div class="aspect-video overflow-hidden bg-black flex items-center justify-center relative">
+                        <img src="../resources/photos/macchinario.jpeg" alt="Abbattimento e Potature" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 right-3 bg-red-900/80 text-white text-[10px] font-bold px-2 py-1 rounded uppercase tracking-wider border border-red-700/50">Alta Specializzazione</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Abbattimento Alberi & Alto Fusto</h4>
+                        <p class="text-sm text-gray-400 mt-2">Abbattimenti controllati in spazi ristretti, potature di sicurezza ad alto fusto e rimozione piante pericolanti con piattaforme aeree.</p>
+                    </div>
+                </div>
         
-        <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#2d5a27] to-[#162a14] text-brand-beige text-3xl shadow-xl animate-bounce duration-1000">
-            <i class="fa-solid fa-leaf"></i>
-        </div>
+                <!-- 2. Realizzazione Giardini -->
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
+                    <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
+                        <img src="../resources/photos/flow.jpg" alt="Realizzazione Giardini" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Realizzazione & Progettazione Giardini</h4>
+                        <p class="text-sm text-gray-400 mt-2">Progettazione su misura, posa prato a rotoli naturale, semina e piantumazione di essenze ornamentali e alberature.</p>
+                    </div>
+                </div>
+        
+                <!-- 3. Impianti di Irrigazione (NUOVO) -->
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
+                    <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
+                        <img src="../resources/photos/ugello-3.jpg" alt="Impianti di Irrigazione" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Impianti d’Irrigazione</h4>
+                        <p class="text-sm text-gray-400 mt-2">Progettazione e installazione di sistemi automatici pop-up, impianti a goccia e centraline intelligenti a risparmio idrico.</p>
+                    </div>
+                </div>
+        
+                <!-- 4. Prati Sintetici (NUOVO) -->
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
+                    <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
+                        <img src="../resources/photos/prato-sintetico.jpeg" alt="Realizzazione Prati Sintetici" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Realizzazione Prati Sintetici</h4>
+                        <p class="text-sm text-gray-400 mt-2">Posa professionale di erba sintetica d'alta qualità, realistica, drenante e priva di manutenzione per giardini e terrazzi.</p>
+                    </div>
+                </div>
+        
+                <!-- 5. Arredo Urbano & Bordature -->
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
+                    <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
+                        <img src="../resources/photos/giardino-sassolino.jpg" alt="Arredo Urbano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Arredo Urbano & Bordature</h4>
+                        <p class="text-sm text-gray-400 mt-2">Creazione di camminamenti esterni, aiuole con ciottoli decorativi, bordature e allestimento spazi pubblici o privati.</p>
+                    </div>
+                </div>
+        
+                <!-- 6. Manutenzione Verde Privato -->
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
+                    <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
+                        <img src="../resources/photos/giardino-prato-caso.jpg" alt="Verde Privato" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Manutenzione Verde Privato</h4>
+                        <p class="text-sm text-gray-400 mt-2">Cura periodica per giardini e ville: taglio erba, concimazione, sagomatura siepi, trattamenti e pulizia stagionale.</p>
+                    </div>
+                </div>
+        
+                <!-- 7. Verde Pubblico -->
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
+                    <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
+                        <img src="../resources/photos/at-work.jpg" alt="Verde Pubblico" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Manutenzione Verde Pubblico</h4>
+                        <p class="text-sm text-gray-400 mt-2">Interventi su parchi, aree condominiali, complessi commerciali e spazi comunali con macchinari professionali.</p>
+                    </div>
+                </div>
+        
+                <!-- 8. Fresa Ceppi & Smaltimento -->
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
+                    <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
+                        <img src="../resources/photos/potatura.png" alt="Smaltimento e Pulizia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Pulizia & Smaltimento Ramaglie</h4>
+                        <p class="text-sm text-gray-400 mt-2">Cippatura sul posto, sgombero totale dei residui vegetali e fresatura ceppi per lasciare l'area perfettamente agibile.</p>
+                    </div>
+                </div>
+        
+                <!-- 9. Trattamento Anti-Zanzare (NUOVO) -->
+                <div class="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden group hover:border-brand-green transition-all duration-300">
+                    <div class="aspect-video overflow-hidden bg-black flex items-center justify-center">
+                        <img src="../resources/photos/anti-zanzare.jpg" alt="Trattamento Anti-Zanzare" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5">
+                        <h4 class="text-lg font-bold uppercase text-brand-beige">Trattamento Anti-Zanzare</h4>
+                        <p class="text-sm text-gray-400 mt-2">Installazione di impianti di nebulizzazione automatica e trattamenti mirati per proteggere il giardino e vivere gli spazi esterni in libertà.</p>
+                    </div>
+                </div>
+        
+            </div>
+        </section>
 
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight leading-none">
-            Il tuo spazio verde <br>
-            <span class="text-brand-beige">sta per sbocciare</span>
-        </h1>
+        <!-- PERCHÉ SCEGLIERE NOI -->
+        <section class="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-2xl p-6 md:p-10 space-y-8">
+            <div class="text-center max-w-xl mx-auto">
+                <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-400">Standard Elevati</h3>
+                <h2 class="text-2xl sm:text-3xl font-black uppercase tracking-tight text-brand-beige mt-1">Perché scegliere Garden Flow</h2>
+            </div>
 
-        <p class="text-gray-400 text-base sm:text-lg max-w-xl mx-auto font-light leading-relaxed">
-            Stiamo coltivando la nostra nuova piattaforma web. <br>
-            Il servizio professionale di potature, cura e architettura del verde a Imola e dintorni sarà presto online.
-        </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="bg-gray-950/60 p-6 rounded-xl border border-gray-800/80 text-center space-y-3 hover:border-brand-green transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-[#2d5a27]/20 text-[#2d5a27] flex items-center justify-center text-xl mx-auto">
+                        <i class="fa-solid fa-broom text-brand-beige"></i>
+                    </div>
+                    <h4 class="font-bold uppercase text-white text-sm">Cantiere Sempre Pulito</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">A fine giornata non lasciamo un solo ramo a terra. Raccogliamo e smaltiamo tutto il materiale di scarto.</p>
+                </div>
 
-        <div class="pt-4">
-                <a href="https://api.whatsapp.com/send?phone=393297791202" target="_blank" class="inline-flex items-center space-x-3 bg-[#2d5a27] hover:bg-green-800 text-white font-bold uppercase text-xs tracking-wider px-8 py-4 rounded-full transition-all duration-300 shadow-lg hover:scale-105">                <i class="fa-brands fa-whatsapp text-base"></i>
-                <span>Richiedi info su WhatsApp</span>
-            </a>
-        </div>
+                <!-- Card 2 -->
+                <div class="bg-gray-950/60 p-6 rounded-xl border border-gray-800/80 text-center space-y-3 hover:border-brand-green transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-[#2d5a27]/20 text-[#2d5a27] flex items-center justify-center text-xl mx-auto">
+                        <i class="fa-solid fa-truck-monster text-brand-beige"></i>
+                    </div>
+                    <h4 class="font-bold uppercase text-white text-sm">Macchinari Propri</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">Piattaforme aeree e trincia di nostra proprietà: nessun ritardo per noleggi di terzi e massima efficienza.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-gray-950/60 p-6 rounded-xl border border-gray-800/80 text-center space-y-3 hover:border-brand-green transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-[#2d5a27]/20 text-[#2d5a27] flex items-center justify-center text-xl mx-auto">
+                        <i class="fa-solid fa-clock text-brand-beige"></i>
+                    </div>
+                    <h4 class="font-bold uppercase text-white text-sm">Sopralluogo in 24h</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">Valutiamo l'intervento sul posto in tempi rapidi e forniamo un preventivo chiaro senza sorprese.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-gray-950/60 p-6 rounded-xl border border-gray-800/80 text-center space-y-3 hover:border-brand-green transition-colors">
+                    <div class="w-12 h-12 rounded-full bg-[#2d5a27]/20 text-[#2d5a27] flex items-center justify-center text-xl mx-auto">
+                        <i class="fa-solid fa-shield-halved text-brand-beige"></i>
+                    </div>
+                    <h4 class="font-bold uppercase text-white text-sm">Sicurezza Certificata</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">Operatori qualificati per interventi in quota e copertura assicurativa completa per la tua proprietà.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="before-after-section">
+            <div class="container">
+                <div class="section-title">
+                <span class="subtitle">Trasformazioni Spettacolari</span>
+                <h2>Prima & Dopo i Nostri Interventi</h2>
+                <p>Dai un'occhiata a come trasformiamo spazi verdi trascurati in oasi di relax curate nei minimi dettagli.</p>
+                </div>
+
+                <div class="comparison-grid">
+                <!-- Card PRIMA -->
+                <div class="comparison-card before">
+                    <div class="badge">Prima</div>
+                    <div class="image-wrapper">
+                    <img src="../resources/photos/prima-ex.png" alt="Giardino trascurato e incolto">
+                    </div>
+                    <div class="card-content">
+                    <h3>Stato Iniziale</h3>
+                    <ul>
+                        <li>Erba alta e erbacce infestanti</li>
+                        <li>Arbusti non potati e disordinati</li>
+                        <li>Terreno secco e privo di definizione</li>
+                    </ul>
+                    </div>
+                </div>
+
+                <!-- Card DOPO -->
+                <div class="comparison-card after">
+                    <div class="badge">Dopo</div>
+                    <div class="image-wrapper">
+                    <img src="../resources/photos/dopo-ex.png" alt="Giardino curato e ordinato">                    </div>
+                    <div class="card-content">
+                    <h3>Risultato Finale</h3>
+                    <ul>
+                        <li>Prato verde ed ergonomico rasato alla perfezione</li>
+                        <li>Potatura di formazione e pulizia completa</li>
+                        <li>Area living esterna rigenerata e funzionale</li>
+                    </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="preventivo" class="bg-gray-900 border border-gray-800 rounded-2xl p-6 md:p-10 space-y-8">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <h3 class="text-2xl font-black uppercase tracking-tight text-brand-beige">Richiedi un Preventivo</h3>
+                <p class="text-sm text-gray-400">Inserisci i tuoi dati per inviare direttamente un messaggio preimpostato via WhatsApp o Email.</p>
+            </div>
+
+            <form id="form-preventivo" class="max-w-2xl mx-auto space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Nome Completo</label>
+                        <input type="text" id="nome" required class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-green transition-colors" placeholder="Il tuo nome">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Tipo di Intervento</label>
+                        <select id="servizio" class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-green transition-colors">
+                            <option value="Potature spezializzate">Potature</option>
+                            <option value="Pavimentazione e opere esterne">Pavimentazione</option>
+                            <option value="Manutenzione generale del verde">Manutenzione Giardino</option>
+                            <option value="Altro">Altro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">Descrizione sintetica del lavoro</label>
+                    <textarea id="note" rows="3" required class="w-full bg-brand-dark border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-green transition-colors" placeholder="Descrivi qui brevemente l'intervento richiesto..."></textarea>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <button type="button" onclick="sendWhatsApp()" class="flex items-center justify-center space-x-2 bg-emerald-700 hover:bg-emerald-600 text-white font-bold uppercase text-sm py-4 rounded-lg transition-colors cursor-pointer shadow-lg shadow-emerald-900/20">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>Invia su WhatsApp</span>
+                    </button>
+                    <button type="button" onclick="sendEmail()" class="flex items-center justify-center space-x-2 bg-brand-green hover:bg-green-800 text-white font-bold uppercase text-sm py-4 rounded-lg transition-colors cursor-pointer shadow-lg shadow-green-900/20">
+                        <i class="fa-solid fa-envelope text-lg"></i>
+                        <span>Invia via Email</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+
     </main>
 
-    <footer class="w-full max-w-7xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-gray-900/50 text-xs text-gray-500">
-        <div class="text-center sm:text-left space-y-0.5">
-            <p class="font-bold uppercase tracking-wider text-brand-beige text-[10px]">Garden Flow Giardinaggio</p>
-            <p class="text-[11px]">di Florin Herghelegiu</p>
-            <p>Via Montanara Sud 4262 - 40022 Imola (BO)</p>
-            <p>P.IVA / C.F. 02686740396</p>
-        </div>
-        
-        <div class="flex items-center space-x-4 text-base text-gray-400">
-            <a href="https://www.facebook.com/profile.php?id=100088238495696" target="_blank" class="hover:text-brand-beige transition-colors" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-            <a href="https://www.instagram.com/garden_flow_giardinaggio/" target="_blank" class="hover:text-brand-beige transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-
-        <div class="text-center sm:text-right space-y-1">
-            <p>&copy; 2026 Tutti i diritti riservati.</p>
-            <p><a href="/privacy-policy.html" class="underline hover:text-brand-beige transition-colors">Privacy & Cookie Policy</a></p>
-        </div>
-        <!-- Credits Freeherds con Logo -->
-        <div class="pt-3 text-xs text-gray-500 flex items-center justify-center sm:justify-start gap-2">
-            <span>Crafted with passion &amp; digital cappelletti by</span>
-            <a href="https://freeherds.github.io/products-freeherds/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-medium text-gray-400 hover:text-brand-beige transition-colors group">
-                <img src="../resources/photos/logo-freeherds.png" alt="Freeherds Logo" class="h-4 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity">
-                <span class="underline">Freeherds</span>
-            </a>
+    <footer id="contatti" class="bg-gray-950 border-t border-gray-900 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="text-center sm:text-left space-y-1">
+                <p class="text-sm font-bold uppercase tracking-wider text-brand-beige">Garden Flow Giardinaggio</p>
+                <p class="text-xs text-gray-400">di Florin Herghelegiu</p>
+                <p class="text-xs text-gray-400">Via Montanara Sud 4262 - 40022 Imola (BO)</p>
+                <p class="text-xs text-gray-400">P.IVA / C.F. 02686740396</p>
+                <div class="pt-2 text-xs text-gray-500 flex flex-wrap justify-center sm:justify-start gap-x-3 gap-y-1">
+                    <span>&copy; 2026 Tutti i diritti riservati.</span>
+                    <span>•</span>
+                    <a href="/privacy-policy.html" class="underline hover:text-brand-beige transition-colors">Privacy & Cookie Policy</a>
+                </div>
+                <!-- Credits Freeherds con Logo -->
+                <div class="pt-3 text-xs text-gray-500 flex items-center justify-center sm:justify-start gap-2">
+                    <span>Crafted with passion &amp; digital cappelletti by</span>
+                    <a href="https://freeherds.github.io/products-freeherds/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 font-medium text-gray-400 hover:text-brand-beige transition-colors group">
+                        <img src="../resources/photos/logo-freeherds.png" alt="Freeherds Logo" class="h-4 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity">
+                        <span class="underline">Freeherds</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-6 text-xl text-gray-400">
+                <a href="tel:+393297791202" class="hover:text-white transition-colors" title="Chiama ora"><i class="fa-solid fa-phone"></i></a>
+                <a href="mailto:gardenflowgiardinaggio@gmail.com" class="hover:text-white transition-colors" title="Invia Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.instagram.com/garden_flow_giardinaggio/" target="_blank" class="hover:text-brand-beige transition-colors" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100088238495696" target="_blank" class="hover:text-brand-beige transition-colors" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+            </div>
         </div>
     </footer>
 
+    <!-- PULSANTE FLOATING WHATSAPP -->
+    <a href="https://wa.me/393297791202?text=Ciao!%20Vorrei%20maggiori%20informazioni." 
+       target="_blank" 
+       class="fixed bottom-5 right-5 z-50 bg-emerald-600 hover:bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-transform hover:scale-110 border-2 border-white/20"
+       title="Chatta su WhatsApp">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        // Mobile Burger Menu
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        // Carousel Logic
+        const carousel = document.getElementById('carousel');
+        const slides = carousel.children;
+        const totalSlides = slides.length;
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+        document.getElementById('next-slide').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        });
+        document.getElementById('prev-slide').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        });
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }, 5000);
+
+        // Messaging Logic
+        const phone = "393297791202";
+        const emailTarget = "gardenflowgiardinaggio@gmail.com";
+
+        function getFormValues() {
+            const nome = document.getElementById('nome').value.trim();
+            const servizio = document.getElementById('servizio').value;
+            const note = document.getElementById('note').value.trim();
+            if(!nome || !note) {
+                alert("Per favore, inserisci nome e descrizione.");
+                return null;
+            }
+            return { nome, servizio, note };
+        }
+
+        function sendWhatsApp() {
+            const data = getFormValues();
+            if(!data) return;
+            const text = `Richiesta Preventivo da Sito Web\nNome: ${data.nome}\nServizio richiesto: ${data.servizio}\nDescrizione: ${data.note}`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        function sendEmail() {
+            const data = getFormValues();
+            if(!data) return;
+            const subject = `Richiesta Preventivo: ${data.servizio} - ${data.nome}`;
+            const body = `Nome: ${data.nome}\nServizio: ${data.servizio}\n\nDettagli:\n${data.note}`;
+            window.location.href = `mailto:${emailTarget}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
+    </script>
 </body>
 </html>
